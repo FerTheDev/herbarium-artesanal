@@ -282,15 +282,22 @@ footer p { margin: 0; }
   .brand-mark strong { font-size: 1.15rem; }
   .brand-mark small { font-size: .58rem; }
   nav { display: none; }
-  .hero { min-height: 92vh; padding: 6.6rem 1rem 3rem; }
-  .hero::before { inset: 5.5rem .65rem 1rem; }
+  .hero { min-height: auto; display: block; padding: 5.8rem 1rem 2.6rem; color: var(--ink); background: linear-gradient(180deg, rgba(255,247,233,.96), rgba(244,229,200,.92)); }
+  .hero::before { inset: 5.3rem .65rem .8rem; border-color: rgba(33,28,23,.18); }
+  .hero-image, .hero-overlay { position: relative; inset: auto; }
+  .hero-image { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: contain; object-position: center; transform: none; padding: .35rem; background: rgba(255,250,241,.72); border: 1px solid rgba(33,28,23,.14); border-radius: 8px; box-shadow: 0 18px 42px rgba(33,28,23,.16); }
+  .hero-overlay { display: none; }
+  .hero-content { width: 100%; padding: 1.55rem .35rem 0; }
+  .hero .eyebrow { color: var(--gold); }
+  .hero-subtitle { color: var(--muted); }
   .botanical-frame::before, .botanical-frame::after, .mystic-orbit { display: none; }
   .hero-actions, .contact-actions { flex-direction: column; align-items: stretch; }
+  .hero .button.ghost { color: var(--leaf); background: rgba(34,61,43,.06); border-color: rgba(34,61,43,.25); }
   .button { width: 100%; }
   .ritual-strip, .trust-bar, .product-grid, .gallery { grid-template-columns: 1fr; }
   .trust-bar { padding-top: .8rem; }
   .trust-bar span { min-height: 58px; }
-  .gallery img { height: auto; aspect-ratio: 4 / 5; }
+  .gallery img { height: auto; aspect-ratio: auto; object-fit: contain; background: rgba(255,247,233,.72); }
   .product-card-text { min-height: 300px; }
   footer { display: block; }
   footer p + p { margin-top: .35rem; }
