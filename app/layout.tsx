@@ -4,17 +4,17 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Herbarium | Produtos Artesanais",
   description:
-    "Sabonetes artesanais, velas aromáticas e escalda-pés feitos à mão em Curitiba.",
+    "Produtos artesanais em Curitiba: sabonetes, velas aromáticas, escalda-pés e kits para presente feitos à mão pela Herbarium.",
   icons: {
-    icon: "/images/logo-da-marca.jpeg",
-    shortcut: "/images/logo-da-marca.jpeg",
+    icon: "/images/logo-da-marca.webp",
+    shortcut: "/images/logo-da-marca.webp",
   },
   openGraph: {
     title: "Herbarium | Produtos Artesanais",
     description:
-      "Natureza, cuidado e pequenos rituais em produtos artesanais feitos à mão.",
+      "Sabonetes, velas aromáticas, escalda-pés e kits artesanais para autocuidado e presentes.",
     type: "website",
-    images: ["/images/kit-sabonetes-vela.jpeg"],
+    images: ["/images/kit-sabonetes-vela.webp"],
   },
 };
 

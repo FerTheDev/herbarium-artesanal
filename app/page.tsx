@@ -1,20 +1,69 @@
-const whatsappOrder =
-  "https://wa.me/5541998212149?text=Oi%2C%20Fernanda%21%20Vim%20pela%20landing%20page%20da%20Herbarium%20e%20quero%20fazer%20uma%20encomenda.";
+const whatsappBase = "https://wa.me/5541998212149";
 
-const whatsappKits =
-  "https://wa.me/5541998212149?text=Oi%2C%20Fernanda%21%20Gostaria%20de%20saber%20sobre%20kits%20e%20presentes%20da%20Herbarium.";
+const whatsappOrder = `${whatsappBase}?text=${encodeURIComponent(
+  "Oi, Fernanda! Quero montar um kit artesanal da Herbarium."
+)}`;
 
-const whatsappProducts =
-  "https://wa.me/5541998212149?text=Oi%2C%20Fernanda%21%20Quero%20conhecer%20os%20produtos%20artesanais%20da%20Herbarium.";
+const whatsappSoaps = `${whatsappBase}?text=${encodeURIComponent(
+  "Oi, Fernanda! Quero saber quais sabonetes artesanais estão disponíveis."
+)}`;
+
+const whatsappCandles = `${whatsappBase}?text=${encodeURIComponent(
+  "Oi, Fernanda! Quero conhecer as velas aromáticas da Herbarium."
+)}`;
+
+const whatsappFootSoak = `${whatsappBase}?text=${encodeURIComponent(
+  "Oi, Fernanda! Quero saber sobre o escalda-pés artesanal."
+)}`;
+
+const whatsappProducts = `${whatsappBase}?text=${encodeURIComponent(
+  "Oi, Fernanda! Quero conhecer os produtos artesanais da Herbarium."
+)}`;
 
 const instagram = "https://www.instagram.com/herbarium.artesanal/";
+
+const products = [
+  {
+    title: "Sabonetes artesanais",
+    image: "/images/sabonetes-coracao.webp",
+    alt: "Sabonetes artesanais coloridos em formato de coração",
+    tag: "Banho ritual",
+    text: "Para banho, lembrancinhas e kits: peças perfumadas, delicadas e feitas em pequenos lotes.",
+    cta: "Quero sabonetes",
+    href: whatsappSoaps,
+  },
+  {
+    title: "Velas aromáticas",
+    image: "/images/vela-capim-limao.webp",
+    alt: "Vela aromática Herbarium de capim-limão em copo de vidro",
+    tag: "Casa perfumada",
+    text: "Para casa, presente e ritual de descanso: aromas que criam clima e deixam o ambiente mais acolhedor.",
+    cta: "Quero velas",
+    href: whatsappCandles,
+  },
+];
+
+const trustItems = [
+  "Feito à mão em Curitiba",
+  "Atendimento direto com a Fernanda",
+  "Kits personalizados",
+  "Retirada ou envio a combinar",
+];
+
+const occasions = [
+  "Autocuidado",
+  "Presentes afetivos",
+  "Lembrancinhas",
+  "Datas especiais",
+  "Kits personalizados",
+];
 
 export default function Home() {
   return (
     <>
       <header className="site-header" aria-label="Topo">
         <a className="brand-mark" href="#inicio" aria-label="Herbarium - início">
-          <img src="/images/logo-da-marca.jpeg" alt="" />
+          <img src="/images/logo-da-marca.webp" alt="" />
           <span>
             <strong>Herbarium</strong>
             <small>Produtos Artesanais</small>
@@ -22,6 +71,7 @@ export default function Home() {
         </a>
         <nav aria-label="Navegação principal">
           <a href="#produtos">Produtos</a>
+          <a href="#presentes">Presentes</a>
           <a href="#historia">História</a>
           <a href="#contato">Contato</a>
         </nav>
@@ -31,7 +81,7 @@ export default function Home() {
         <section className="hero" aria-labelledby="hero-title">
           <img
             className="hero-image"
-            src="/images/kit-sabonetes-vela.jpeg"
+            src="/images/kit-sabonetes-vela.webp"
             alt="Kit artesanal Herbarium com vela aromática e sabonetes em formato de coração"
           />
           <div className="hero-overlay" />
@@ -39,18 +89,35 @@ export default function Home() {
             <p className="eyebrow">Curitiba | Feito à mão por Fernanda Krokoscz</p>
             <h1 id="hero-title">Herbarium</h1>
             <p className="hero-subtitle">
-              Produtos artesanais para transformar o autocuidado em um ritual
-              calmo, perfumado e especial.
+              Sabonetes, velas aromáticas, escalda-pés e kits artesanais para
+              autocuidado e presentes.
             </p>
             <div className="hero-actions" aria-label="Ações principais">
               <a className="button primary" href={whatsappOrder} target="_blank" rel="noreferrer">
-                Encomendar pelo WhatsApp
+                Montar meu kit pelo WhatsApp
               </a>
               <a className="button ghost" href={instagram} target="_blank" rel="noreferrer">
                 Ver Instagram
               </a>
             </div>
           </div>
+          <aside className="hero-note" aria-label="Essência da marca">
+            <img src="/images/logo-da-marca.webp" alt="" />
+            <p>Natureza, cuidado e pequenos rituais.</p>
+          </aside>
+        </section>
+
+        <section className="ritual-strip" aria-label="Diferenciais artesanais">
+          <span>Pequenos lotes</span>
+          <span>Aromas afetivos</span>
+          <span>Presentes sob encomenda</span>
+          <span>Curitiba e envio a combinar</span>
+        </section>
+
+        <section className="trust-bar" aria-label="Informações de confiança">
+          {trustItems.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
         </section>
 
         <section className="intro section-pad" aria-labelledby="intro-title">
@@ -73,58 +140,61 @@ export default function Home() {
         </section>
 
         <section id="produtos" className="products section-pad" aria-labelledby="products-title">
-          <div className="section-heading">
+          <div className="section-heading centered">
             <p className="eyebrow">Feitos em pequenos lotes</p>
             <h2 id="products-title">Escolha seu ritual.</h2>
           </div>
           <div className="product-grid">
-            <article className="product-card">
-              <img
-                src="/images/sabonetes-coracao.jpeg"
-                alt="Sabonetes artesanais coloridos em formato de coração"
-              />
-              <div>
-                <h3>Sabonetes artesanais</h3>
-                <p>
-                  Formatos delicados, cores vivas e aromas pensados para
-                  transformar o banho em um momento de pausa.
-                </p>
-              </div>
-            </article>
-            <article className="product-card">
-              <img
-                src="/images/vela-capim-limao.jpeg"
-                alt="Vela aromática Herbarium de capim limão em copo de vidro"
-              />
-              <div>
-                <h3>Velas aromáticas</h3>
-                <p>
-                  Velas decorativas e perfumadas para criar clima, aquecer
-                  ambientes e compor presentes especiais.
-                </p>
-              </div>
-            </article>
+            {products.map((product) => (
+              <article className="product-card" key={product.title}>
+                <div className="product-image-wrap">
+                  <img src={product.image} alt={product.alt} />
+                  <span>{product.tag}</span>
+                </div>
+                <div className="product-content">
+                  <h3>{product.title}</h3>
+                  <p>{product.text}</p>
+                  <a className="text-link" href={product.href} target="_blank" rel="noreferrer">
+                    {product.cta}
+                  </a>
+                </div>
+              </article>
+            ))}
             <article className="product-card product-card-text">
-              <div className="botanical-symbol" aria-hidden="true">
+              <div className="moon-mark" aria-hidden="true">
                 ✦
               </div>
-              <div>
-                <h3>Escalda-pés artesanal</h3>
-                <p>
-                  Uma pausa para desacelerar: preparado artesanalmente para
-                  acompanhar momentos de descanso e autocuidado.
-                </p>
-                <span>Foto em breve</span>
-              </div>
+              <span className="card-kicker">Pausa para os pés</span>
+              <h3>Escalda-pés artesanal</h3>
+              <p>
+                Para pausa, relaxamento e autocuidado: uma forma simples de
+                desacelerar e transformar o fim do dia em ritual.
+              </p>
+              <a className="text-link light" href={whatsappFootSoak} target="_blank" rel="noreferrer">
+                Quero escalda-pés
+              </a>
+              <small>Foto em breve</small>
             </article>
           </div>
         </section>
 
+        <section id="presentes" className="occasions section-pad" aria-labelledby="occasions-title">
+          <div className="section-heading centered">
+            <p className="eyebrow">Quando escolher Herbarium</p>
+            <h2 id="occasions-title">Para cuidar, presentear e marcar momentos.</h2>
+          </div>
+          <div className="occasion-list" aria-label="Ocasiões de compra">
+            {occasions.map((occasion) => (
+              <span key={occasion}>{occasion}</span>
+            ))}
+          </div>
+        </section>
+
         <section className="gallery section-pad" aria-label="Galeria de produtos Herbarium">
-          <img src="/images/kit-sabonetes-presentes.jpeg" alt="Kit de sabonetes artesanais em caixa para presente" />
-          <img src="/images/vela-baunilha-morango.jpeg" alt="Vela aromática de baunilha e morango com laço rosa" />
-          <img src="/images/sabonetes-artesanais.jpeg" alt="Sabonetes artesanais amarelos em embalagem rústica" />
-          <img src="/images/vela-cimento-rosa.jpeg" alt="Vela artesanal rosa com base de cimento" />
+          <img src="/images/kit-sabonetes-presentes.webp" alt="Kit de sabonetes artesanais em caixa para presente" />
+          <img src="/images/vela-baunilha-morango.webp" alt="Vela aromática de baunilha e morango com laço rosa" />
+          <img src="/images/sabonetes-artesanais.webp" alt="Sabonetes artesanais amarelos em embalagem rústica" />
+          <img src="/images/vela-cimento-rosa.webp" alt="Vela artesanal rosa com base de cimento" />
         </section>
 
         <section className="gifts section-pad" aria-labelledby="gifts-title">
@@ -133,12 +203,12 @@ export default function Home() {
             <h2 id="gifts-title">Kits com cara de carinho.</h2>
           </div>
           <p>
-            A Herbarium também monta combinações sob encomenda para datas
-            especiais, lembrancinhas, presentes afetivos e pequenos rituais de
-            cuidado. Os detalhes de aromas, cores, disponibilidade e envio são
-            combinados diretamente pelo WhatsApp.
+            A Herbarium monta combinações sob encomenda para datas especiais,
+            lembrancinhas, presentes afetivos e pequenos rituais de cuidado. Os
+            detalhes de aromas, cores, disponibilidade e envio são combinados
+            diretamente pelo WhatsApp.
           </p>
-          <a className="button secondary" href={whatsappKits} target="_blank" rel="noreferrer">
+          <a className="button secondary" href={whatsappOrder} target="_blank" rel="noreferrer">
             Pedir opções de kit
           </a>
         </section>
@@ -146,7 +216,7 @@ export default function Home() {
         <section id="historia" className="story section-pad" aria-labelledby="story-title">
           <div className="story-photo">
             <img
-              src="/images/fernanda-krokoscz.jpeg"
+              src="/images/fernanda-krokoscz.webp"
               alt="Fernanda Krokoscz, responsável pela marca Herbarium"
             />
           </div>
@@ -154,8 +224,8 @@ export default function Home() {
             <p className="eyebrow">Por trás da marca</p>
             <h2 id="story-title">Criada por Fernanda Krokoscz.</h2>
             <p>
-              A Herbarium nasceu do encanto pelos aromas naturais, pelas
-              pequenas pausas e pela beleza das coisas feitas à mão.
+              A Herbarium nasceu do encanto pelos aromas naturais, pelas pequenas
+              pausas e pela beleza das coisas feitas à mão.
             </p>
             <p>
               Criamos produtos artesanais para transformar pequenos momentos de
