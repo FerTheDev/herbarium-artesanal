@@ -78,13 +78,18 @@ export default function Home() {
       </header>
 
       <main id="inicio">
-        <section className="hero" aria-labelledby="hero-title">
+        <section className="hero botanical-frame" aria-labelledby="hero-title">
           <img
             className="hero-image"
             src="/images/kit-sabonetes-vela.webp"
             alt="Kit artesanal Herbarium com vela aromática e sabonetes em formato de coração"
           />
           <div className="hero-overlay" />
+          <div className="mystic-orbit" aria-hidden="true">
+            <span>☾</span>
+            <span>✦</span>
+            <span>☽</span>
+          </div>
           <div className="hero-content">
             <p className="eyebrow">Curitiba | Feito à mão por Fernanda Krokoscz</p>
             <h1 id="hero-title">Herbarium</h1>
@@ -108,10 +113,10 @@ export default function Home() {
         </section>
 
         <section className="ritual-strip" aria-label="Diferenciais artesanais">
-          <span>Pequenos lotes</span>
-          <span>Aromas afetivos</span>
-          <span>Presentes sob encomenda</span>
-          <span>Curitiba e envio a combinar</span>
+          <span>☿ Pequenos lotes</span>
+          <span>✧ Aromas afetivos</span>
+          <span>☾ Presentes sob encomenda</span>
+          <span>♁ Curitiba e envio a combinar</span>
         </section>
 
         <section className="trust-bar" aria-label="Informações de confiança">
@@ -120,7 +125,7 @@ export default function Home() {
           ))}
         </section>
 
-        <section className="intro section-pad" aria-labelledby="intro-title">
+        <section className="intro section-pad branch-divider" aria-labelledby="intro-title">
           <div className="section-heading">
             <p className="eyebrow">Natureza, cuidado e pequenos rituais</p>
             <h2 id="intro-title">O mundo artesanal mora nos detalhes.</h2>
@@ -146,7 +151,7 @@ export default function Home() {
           </div>
           <div className="product-grid">
             {products.map((product) => (
-              <article className="product-card" key={product.title}>
+              <article className="product-card botanical-card" key={product.title}>
                 <div className="product-image-wrap">
                   <img src={product.image} alt={product.alt} />
                   <span>{product.tag}</span>
@@ -160,9 +165,9 @@ export default function Home() {
                 </div>
               </article>
             ))}
-            <article className="product-card product-card-text">
+            <article className="product-card product-card-text botanical-card">
               <div className="moon-mark" aria-hidden="true">
-                ✦
+                ☾ ✦ ☽
               </div>
               <span className="card-kicker">Pausa para os pés</span>
               <h3>Escalda-pés artesanal</h3>
@@ -178,7 +183,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="presentes" className="occasions section-pad" aria-labelledby="occasions-title">
+        <section id="presentes" className="occasions section-pad branch-divider" aria-labelledby="occasions-title">
           <div className="section-heading centered">
             <p className="eyebrow">Quando escolher Herbarium</p>
             <h2 id="occasions-title">Para cuidar, presentear e marcar momentos.</h2>
@@ -190,7 +195,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="gallery section-pad" aria-label="Galeria de produtos Herbarium">
+        <section className="gallery section-pad botanical-gallery" aria-label="Galeria de produtos Herbarium">
           <img src="/images/kit-sabonetes-presentes.webp" alt="Kit de sabonetes artesanais em caixa para presente" />
           <img src="/images/vela-baunilha-morango.webp" alt="Vela aromática de baunilha e morango com laço rosa" />
           <img src="/images/sabonetes-artesanais.webp" alt="Sabonetes artesanais amarelos em embalagem rústica" />
@@ -213,7 +218,7 @@ export default function Home() {
           </a>
         </section>
 
-        <section id="historia" className="story section-pad" aria-labelledby="story-title">
+        <section id="historia" className="story section-pad branch-divider" aria-labelledby="story-title">
           <div className="story-photo">
             <img
               src="/images/fernanda-krokoscz.webp"
@@ -235,7 +240,7 @@ export default function Home() {
         </section>
 
         <section id="contato" className="contact section-pad" aria-labelledby="contact-title">
-          <div className="contact-inner">
+          <div className="contact-inner botanical-frame">
             <p className="eyebrow">Encomendas em Curitiba e envio a combinar</p>
             <h2 id="contact-title">Vamos montar seu ritual?</h2>
             <p>

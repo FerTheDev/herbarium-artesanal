@@ -61,6 +61,10 @@ body::after {
     repeating-linear-gradient(15deg, rgba(255, 250, 241, 0.45) 0 1px, transparent 1px 12px);
 }
 
+main {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -165,6 +169,31 @@ nav a:focus-visible::after {
   isolation: isolate;
 }
 
+.botanical-frame::before {
+  content: "☾  ✦  ☽";
+  position: absolute;
+  top: clamp(6.4rem, 10vw, 8.4rem);
+  right: clamp(1.4rem, 6vw, 5rem);
+  z-index: 2;
+  color: rgba(255, 250, 241, 0.6);
+  font-size: clamp(1.6rem, 4vw, 3.4rem);
+  letter-spacing: 0.12em;
+  pointer-events: none;
+}
+
+.botanical-frame::after {
+  content: "✧  folhas, aromas e pequenos rituais  ✧";
+  position: absolute;
+  left: clamp(1.5rem, 5vw, 4.5rem);
+  bottom: 1.25rem;
+  z-index: 2;
+  color: rgba(255, 250, 241, 0.58);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1rem, 2vw, 1.45rem);
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
+
 .hero-image,
 .hero-overlay {
   position: absolute;
@@ -197,21 +226,24 @@ nav a:focus-visible::after {
   box-shadow: inset 0 0 0 1px rgba(33, 28, 23, 0.16);
 }
 
-.hero::after {
-  content: "✦";
-  position: absolute;
-  top: 8.4rem;
-  right: clamp(2rem, 7vw, 6rem);
-  z-index: 1;
-  color: rgba(255, 250, 241, 0.55);
-  font-size: clamp(2.6rem, 6vw, 5rem);
-}
-
 .hero-content {
   position: relative;
   z-index: 2;
   width: min(780px, 100%);
   padding-bottom: 3vh;
+}
+
+.mystic-orbit {
+  position: absolute;
+  right: clamp(2rem, 8vw, 7rem);
+  top: 26%;
+  z-index: 2;
+  display: grid;
+  gap: 0.6rem;
+  color: rgba(255, 250, 241, 0.62);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.4rem, 3vw, 2.5rem);
+  text-align: center;
 }
 
 .eyebrow {
@@ -392,6 +424,33 @@ h3 {
   text-align: center;
 }
 
+.branch-divider {
+  position: relative;
+}
+
+.branch-divider::before,
+.branch-divider::after {
+  position: absolute;
+  z-index: -1;
+  color: rgba(29, 59, 42, 0.12);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(5rem, 16vw, 13rem);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.branch-divider::before {
+  content: "☽";
+  left: -1rem;
+  top: 1rem;
+}
+
+.branch-divider::after {
+  content: "☾";
+  right: -0.5rem;
+  bottom: 1rem;
+}
+
 .intro {
   position: relative;
   display: grid;
@@ -441,6 +500,27 @@ h3 {
   border: 1px solid rgba(33, 28, 23, 0.14);
   border-radius: 8px;
   box-shadow: 0 18px 48px rgba(33, 28, 23, 0.12);
+}
+
+.botanical-card::before {
+  content: "☾";
+  position: absolute;
+  top: 0.7rem;
+  right: 0.85rem;
+  z-index: 2;
+  color: rgba(255, 250, 241, 0.82);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.7rem;
+  text-shadow: 0 4px 18px rgba(33, 28, 23, 0.45);
+}
+
+.botanical-card::after {
+  content: "";
+  position: absolute;
+  inset: 0.65rem;
+  border: 1px solid rgba(255, 250, 241, 0.38);
+  border-radius: 6px;
+  pointer-events: none;
 }
 
 .product-image-wrap {
@@ -570,7 +650,8 @@ h3 {
 .moon-mark {
   margin-bottom: 1.2rem;
   color: var(--gold);
-  font-size: 3rem;
+  font-size: 2.2rem;
+  letter-spacing: 0.12em;
 }
 
 .occasions {
@@ -602,6 +683,22 @@ h3 {
   grid-template-columns: 1.2fr 0.8fr 0.8fr 1.2fr;
   gap: 1.1rem;
   padding-top: 0;
+}
+
+.botanical-gallery {
+  position: relative;
+}
+
+.botanical-gallery::before {
+  content: "☾ ✦ ☽";
+  position: absolute;
+  left: 50%;
+  top: 1.3rem;
+  transform: translateX(-50%);
+  color: rgba(29, 59, 42, 0.35);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.5em;
 }
 
 .gallery img {
@@ -713,6 +810,19 @@ h3 {
   border: 1px solid rgba(33, 28, 23, 0.15);
   border-radius: 8px;
   box-shadow: var(--shadow);
+}
+
+.contact-inner.botanical-frame::before {
+  color: rgba(29, 59, 42, 0.26);
+  top: 1.3rem;
+}
+
+.contact-inner.botanical-frame::after {
+  content: "☿  rituais feitos à mão  ☿";
+  color: rgba(29, 59, 42, 0.22);
+  left: auto;
+  right: 2rem;
+  bottom: 1rem;
 }
 
 .contact-inner::after {
@@ -850,8 +960,13 @@ footer p {
   }
 
   .hero::after {
-    top: 6.4rem;
-    right: 1.4rem;
+    display: none;
+  }
+
+  .botanical-frame::before,
+  .botanical-frame::after,
+  .mystic-orbit {
+    display: none;
   }
 
   .hero-overlay {
