@@ -66,7 +66,7 @@ export default function Home() {
           <img src="/images/logo-da-marca.webp" alt="" />
           <span>
             <strong>Herbarium</strong>
-            <small>Produtos Artesanais</small>
+            <small>Saboaria botânica</small>
           </span>
         </a>
         <nav aria-label="Navegação principal">
@@ -91,7 +91,7 @@ export default function Home() {
             <span>☽</span>
           </div>
           <div className="hero-content">
-            <p className="eyebrow">Curitiba | Feito à mão por Fernanda Krokoscz</p>
+            <p className="eyebrow">Saboaria botânica | Feito à mão em Curitiba</p>
             <h1 id="hero-title">Herbarium</h1>
             <p className="hero-subtitle">
               Sabonetes, velas aromáticas, escalda-pés e kits artesanais para
@@ -108,7 +108,7 @@ export default function Home() {
           </div>
           <aside className="hero-note" aria-label="Essência da marca">
             <img src="/images/logo-da-marca.webp" alt="" />
-            <p>Natureza, cuidado e pequenos rituais.</p>
+            <p>Banhos, aromas e pausas que se transformam em ritual.</p>
           </aside>
         </section>
 
@@ -270,7 +270,7 @@ export default function Home() {
       </a>
 
       <footer>
-        <p>Herbarium | Produtos Artesanais</p>
+        <p>Herbarium | Saboaria botânica e produtos artesanais</p>
         <p>Sabonetes, velas aromáticas e escalda-pés feitos à mão.</p>
       </footer>
     </>
